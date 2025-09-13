@@ -19,7 +19,7 @@ sh download_tets.sh
 ```
 
 ### Datasets
-Download the preprocessed datasets for each project using the download scripts provided in `data/`. All datasets should be downloaded in the same directory as the download script, for example:
+Download the preprocessed datasets using the download scripts provided in `data/`. All datasets should be downloaded in the same directory as the download script, for example:
 ```shell
 cd data/magicpony
 sh download_horse_combined.sh

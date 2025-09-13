@@ -8,32 +8,6 @@ This repository contains the unified codebase for cheetah pose estimation on art
 ## Installation
 See [INSTALL.md](./INSTALL.md).
 
-## Data
-### Tetrahedral Grids
-We adopt the hybrid SDF-mesh representation from [DMTet](https://research.nvidia.com/labs/toronto-ai/DMTet/) to represent the 3D shape of the animals. It uses tetrahedral grids to extract meshes from underlying SDF representation.
-
-Download the pre-computed tetrahedral grids:
-```shell
-cd data/tets
-sh download_tets.sh
-```
-
-### Datasets
-Download the preprocessed datasets using the download scripts provided in `data/`. All datasets should be downloaded in the same directory as the download script, for example:
-```shell
-cd data/magicpony
-sh download_horse_combined.sh
-```
-See the notes [below](#data-1) for the details of each dataset.
-
-
-## Pretrained Models
-The pretrained models can be downloaded using the scripts provided in `results/`. All pretrained models should be downloaded in the same directory as the download script, for example:
-```shell
-cd results/magicpony
-sh download_pretrained_horse.sh
-```
-
 
 ## Run
 Once the data is prepared, both training and inference of all models can be executed using a single command:
@@ -85,9 +59,6 @@ For more precise texture optimization, provide instance masks in the same folder
 
 ## 3D-Fauna [![arXiv](https://img.shields.io/badge/arXiv-2401.02400-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2401.02400)
 [3D-Fauna](https://kyleleey.github.io/3DFauna/) learns a pan-category model for single-image articulated 3D reconstruction of any quadruped species.
-
-### Data
-The `Fauna Dataset`, which can be downloaded via the script `data/fauna/download_fauna_dataset.sh`, consists of video frames and images sourced from the Internet, as well as images from [DOVE](https://dove3d.github.io/), [APT-36K](https://github.com/pandorgan/APT-36K), [Animal3D](https://xujiacong.github.io/Animal3D/), and [Animals-with-Attributes](https://cvml.ista.ac.at/AwA2/).
 
 ### Training
 To train 3D-Fauna on the Fauna Dataset, simply run:

@@ -74,7 +74,7 @@ Running the script produces:
 ```bash
 # Ensure dependencies are installed (NumPy, Matplotlib, etc.)
 python visualization/extract_touch_point.py
-
+```
 
 ## Citation
 If you use this repository or find the papers useful for your research, please consider citing the following publications, as well as the original publications of the datasets used:

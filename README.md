@@ -1,10 +1,8 @@
 # 3D Animals Codebase
 
-This repository contains the unified codebase for several projects on articulated 3D animal reconstruction and motion generation, including:
+This repository contains the unified codebase for cheetah pose estimation on articulated 3D animal reconstruction and motion generation, including:
 
-- [MagicPony: Learning Articulated 3D Animals in the Wild](https://3dmagicpony.github.io/) (CVPR 2023) [![arXiv](https://img.shields.io/badge/arXiv-2211.12497-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2211.12497) - a category-specific single-image 3D animal reconstruction model
 - [Learning the 3D Fauna of the Web](https://kyleleey.github.io/3DFauna/) (CVPR 2024) [![arXiv](https://img.shields.io/badge/arXiv-2401.02400-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2401.02400) - a pan-category single-image 3D quadruped reconstruction model
-- [Ponymation: Learning Articulated 3D Animal Motions from Unlabeled Online Videos](https://keqiangsun.github.io/projects/ponymation/) (ECCV 2024) [![arXiv](https://img.shields.io/badge/arXiv-2312.13604-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2312.13604) - an articulated 3D animal motion generative model
 
 
 ## Installation

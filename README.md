@@ -58,6 +58,23 @@ To train 3D-Fauna on the Fauna Dataset, simply run:
 python run.py --config-name train_fauna
 ```
 
+## Audio Feature Extraction (Enhanced)
+
+We provide an enhanced audio feature extraction script located at  
+[`visualization/extract_touch_point.py`](visualization/extract_touch_point.py).  
+This script implements a **contact-event detection pipeline** from audio using **STFT band energy (50–300 Hz)**, with robust thresholding, hysteresis, and minimum-duration rules. It aligns detected events with video frames to generate more accurate multimodal features.
+
+### Outputs
+Running the script produces:
+- `FigB_BandEnergy_Windows.png` – STFT band energy visualization  
+- `FigC_BinaryMask_Frames.png` – Binary mask of detected events aligned to frames  
+- `contact_events.json` – JSON file recording event times (seconds and frames)
+
+### Usage
+```bash
+# Ensure dependencies are installed (NumPy, Matplotlib, etc.)
+python visualization/extract_touch_point.py
+
 
 ## Citation
 If you use this repository or find the papers useful for your research, please consider citing the following publications, as well as the original publications of the datasets used:

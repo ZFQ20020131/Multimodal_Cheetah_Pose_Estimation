@@ -83,28 +83,6 @@ To enable texture finetuning at test time, set `finetune_texture: true` in the c
 For more precise texture optimization, provide instance masks in the same folder as `*_mask.png`. Otherwise, the background pixels might be pasted onto the object if shape predictions are not perfectly aligned.
 
 
-## MagicPony [![arXiv](https://img.shields.io/badge/arXiv-2211.12497-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2211.12497)
-[MagicPony](https://3dmagicpony.github.io/) learns a category-specific model for single-image articulated 3D reconstruction of an animal species.
-
-### Data
-We trained MagicPony models on image collections of horses, giraffes, zebras, cows, and birds. The data download scripts in `data/magicpony` provide access to the following preprocessed datasets:
-- `horse_videos` and `bird_videos` were released by [DOVE](https://dove3d.github.io/).
-- `horse_combined` consists of `horse_videos` and additional images selected from [Weizmann Horse Database](https://www.kaggle.com/datasets/ztaihong/weizmann-horse-database), [PASCAL](http://host.robots.ox.ac.uk/pascal/VOC/), and [Horse-10](http://www.mackenziemathislab.org/horse10).
-- `giraffe_coco`, `zebra_coco` and `cow_coco` are filtered subsets of the [COCO dataset](https://cocodataset.org/).
-
-### Training
-To train MagicPony on the provided horse dataset or bird dataset from scratch, simply use the training configs: `train_magicpony_horse` or `train_magicpony_bird`, e.g.:
-```shell
-python run.py --config-name train_magicpony_horse
-```
-For multi-GPU training, use the `accelerator launch` command, e.g.:
-```shell
-accelerator launch --multi_gpu run.py --config-name train_magicpony_horse
-```
-
-To train it on the provided giraffe, zebra, or cow datasets, which are much smaller, please finetune from a _pretrained_ horse model using the finetuning configs: `finetune_magicpony_giraffe`, `finetune_magicpony_zebra`, or `finetune_magicpony_cow`.
-
-
 ## 3D-Fauna [![arXiv](https://img.shields.io/badge/arXiv-2401.02400-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2401.02400)
 [3D-Fauna](https://kyleleey.github.io/3DFauna/) learns a pan-category model for single-image articulated 3D reconstruction of any quadruped species.
 
@@ -118,34 +96,8 @@ python run.py --config-name train_fauna
 ```
 
 
-## Ponymation [![arXiv](https://img.shields.io/badge/arXiv-2312.13604-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2312.13604)
-[Ponymation](https://keqiangsun.github.io/projects/ponymation/) learns a generative model of articulated 3D motions of an animal species.
-
-### Data
-Dataset can be downloaded via the script `data/ponymation/download_ponymation_dataset.sh`, including video data of horse, cow, giraffe, and zebra.
-
-### Training
-Ponymation is trained in two stages. In the first stage, we pretrain a 3D reconstruction model that takes in a sequence of frames and reconstructs a sequence of articulated 3D shapes of the animal. This stage can be initiated using the stage 1 config `train_ponymation_horse_stage1`:
-```shell
-python run.py --config-name train_ponymation_horse_stage1
-```
-
-After this video reconstruction model is pretrained, we then train a generative model of the articulated 3D motions in the second stage, using the stage 2 config `train_ponymation_horse_stage2`:
-```shell
-python run.py --config-name train_ponymation_horse_stage2
-```
-
-
 ## Citation
 If you use this repository or find the papers useful for your research, please consider citing the following publications, as well as the original publications of the datasets used:
-```
-@InProceedings{wu2023magicpony,
-  title     = {{MagicPony}: Learning Articulated 3D Animals in the Wild},
-  author    = {Wu, Shangzhe and Li, Ruining and Jakab, Tomas and Rupprecht, Christian and Vedaldi, Andrea},
-  booktitle = {CVPR},
-  year      = {2023}
-}
-```
 
 ```
 @InProceedings{li2024fauna,
@@ -155,21 +107,6 @@ If you use this repository or find the papers useful for your research, please c
   year      = {2024}
 }
 ```
-
-```
-@InProceedings{sun2024ponymation,
-  title     = {{Ponymation}: Learning Articulated 3D Animal Motions from Unlabeled Online Videos},
-  author    = {Sun, Keqiang and Litvak, Dor and Zhang, Yunzhi and Li, Hongsheng and Wu, Jiajun and Wu, Shangzhe},
-  booktitle = {ECCV},
-  year      = {2024}
-}
-```
-
-## TODO
-
-- [ ] Ponymation dataset update
-- [ ] Data processing script
-- [ ] Metrics evaluation script
 
 ## modify files
 ```

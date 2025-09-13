@@ -28,14 +28,9 @@ Note that only the RGB images are required during testing. The DINO features are
 When running the command with the default test configs, it will automatically save some basic visualizations, including the reconstructed views and 3D meshes. For more advanced and customized visualizations, use `visualization/visualize_results.py` as explained [below](#visualization).
 
 ### Visualization
-We provide some scripts that we used to generate the visualizations on our project pages ([MagicPony](https://3dmagicpony.github.io/), [3D-Fauna](https://kyleleey.github.io/3DFauna/), [Ponymation](https://keqiangsun.github.io/projects/ponymation/)). To render such visualizations, simply run the following command with the proper test config, e.g.:
+We provide some scripts that we used to generate the visualizations on our project pages ([MagicPony](https://3dmagicpony.github.io/), [3D-Fauna](https://kyleleey.github.io/3DFauna/), [Ponymation](https://keqiangsun.github.io/projects/ponymation/)). To render such visualizations, simply run the following command with the proper test config:
 ```shell
-python visualization/visualize_results.py --config-name test_magicpony_horse
-```
-
-For 3D-Fauna, use `visualize_results_fauna.py` instead:
-```shell
-python visualization/visualize_results_fauna.py --config-name test_fauna
+python visualization/visualize_results_fauna_clap.py --config-name test_fauna
 ```
 
 Check the `#Visualization` section in the config files for specific visualization configurations.

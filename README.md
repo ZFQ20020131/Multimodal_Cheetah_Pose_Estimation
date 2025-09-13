@@ -18,7 +18,7 @@ or for training with DDP using multiple GPUs:
 ```shell
 accelerate launch --multi_gpu run.py --config-name CONFIG_NAME
 ```
-`CONFIG_NAME` can be any of the configs specified in `config/`, e.g., `test_magicpony_horse` or `train_magicpony_horse`.
+`CONFIG_NAME` can be any of the configs specified in `config/`, e.g., `test_fauna` or `train_fauna`.
 
 ### Testing using the Pretrained Models
 The simplest use case is to test the pretrained models on test images. To do this, use the configs in `configs/` that start with `test_*`. Open the config files to check the details, including the path of the test images.

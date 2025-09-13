@@ -1,4 +1,4 @@
-# 3D Animals Codebase
+# Cheetah Pose Estimation Codebase
 
 This repository contains the unified codebase for cheetah pose estimation on articulated 3D animal reconstruction and motion generation, including:
 
